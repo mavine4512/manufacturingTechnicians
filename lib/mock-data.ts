@@ -1,13 +1,13 @@
 import type { KnowledgeEntry } from "./types"
 
-// In-memory storage for mock API
-const mockEntries: KnowledgeEntry[] = [
+// Initial data template
+const initialEntries: KnowledgeEntry[] = [
   {
     id: "1",
     title: "Safety Protocol Update",
     description:
       "New safety procedures for handling hydraulic equipment. Always wear protective gear and follow lockout/tagout procedures.",
-    imageUrl: "/assets/safetyGear.png",
+    imageUrl: "/assets/assortedSafetyGear.png",
     createdAt: new Date("2025-03-01").toISOString(),
     updatedAt: new Date("2025-03-01").toISOString(),
   },
@@ -28,6 +28,8 @@ const mockEntries: KnowledgeEntry[] = [
     updatedAt: new Date("2025-03-03").toISOString(),
   },
 ]
+
+let mockEntries: KnowledgeEntry[] = [...initialEntries]
 
 export function getMockEntries(): KnowledgeEntry[] {
   return [...mockEntries]
@@ -66,4 +68,8 @@ export function deleteMockEntry(id: string): boolean {
 
   mockEntries.splice(index, 1)
   return true
+}
+
+export function resetMockData(): void {
+  mockEntries = [...initialEntries]
 }
