@@ -1,0 +1,156 @@
+# Page snapshot
+
+```yaml
+- generic:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - img
+              - generic:
+                - heading [level=2]: Knowledge Hub
+                - paragraph: Manufacturing Portal
+          - generic:
+            - generic:
+              - generic: Navigation
+              - generic:
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - img
+                      - generic: Dashboard
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - img
+                      - generic: Knowledge Base
+                  - listitem:
+                    - link:
+                      - /url: "#"
+                      - img
+                      - generic: Reports
+                  - listitem:
+                    - link:
+                      - /url: "#"
+                      - img
+                      - generic: Documentation
+          - generic:
+            - list:
+              - listitem:
+                - link:
+                  - /url: "#settings"
+                  - img
+                  - generic: Settings
+    - main:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - img
+                  - generic:
+                    - heading [level=1]: Knowledge Capture
+                    - paragraph: Manufacturing Technician Portal
+              - button:
+                - img
+                - generic: Add Entry
+        - main:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=2]: Knowledge Entries
+                - paragraph: 3 entries available
+              - generic:
+                - img
+                - searchbox
+          - generic:
+            - generic:
+              - generic:
+                - img
+                - generic:
+                  - generic:
+                    - img
+                    - text: Mar 1
+              - generic:
+                - generic: Safety Protocol Update
+                - generic:
+                  - img
+                  - text: March 1, 2025
+              - generic:
+                - paragraph: New safety procedures for handling hydraulic equipment. Always wear protective gear and follow lockout/tagout procedures.
+                - generic:
+                  - button:
+                    - img
+                    - text: Edit
+                  - button:
+                    - img
+                    - text: Delete
+            - generic:
+              - generic:
+                - img
+                - generic:
+                  - generic:
+                    - img
+                    - text: Mar 2
+              - generic:
+                - generic: Machine Calibration Process
+                - generic:
+                  - img
+                  - text: March 2, 2025
+              - generic:
+                - paragraph: Step-by-step guide for calibrating CNC machines. Check alignment every 100 hours of operation.
+                - generic:
+                  - button:
+                    - img
+                    - text: Edit
+                  - button:
+                    - img
+                    - text: Delete
+            - generic:
+              - generic:
+                - generic: Quality Control Checklist
+                - generic:
+                  - img
+                  - text: March 3, 2025
+              - generic:
+                - paragraph: Daily quality control procedures for production line. Inspect dimensions, surface finish, and material integrity.
+                - generic:
+                  - button:
+                    - img
+                    - text: Edit
+                  - button:
+                    - img
+                    - text: Delete
+    - list
+  - button "Open Next.js Dev Tools" [ref=e6] [cursor=pointer]:
+    - img [ref=e7] [cursor=pointer]
+  - alert
+  - dialog "Edit Entry" [ref=e11]:
+    - generic [ref=e12]:
+      - heading "Edit Entry" [level=2] [ref=e13]
+      - paragraph [ref=e14]: Update the knowledge entry details below.
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: Title *
+          - textbox "Title *" [ref=e19]: Updated Safety Protocol
+        - generic [ref=e20]:
+          - generic [ref=e21]: Description *
+          - textbox "Description *" [ref=e22]: New safety procedures for handling hydraulic equipment. Always wear protective gear and follow lockout/tagout procedures.
+        - generic [ref=e23]:
+          - generic [ref=e24]: Image URL (optional)
+          - textbox "Image URL (optional)" [active] [ref=e25]: /assets/assortedSafetyGear.png
+          - paragraph [ref=e26]: Provide a URL to an image or leave blank
+      - generic [ref=e27]:
+        - button "Cancel" [ref=e28]
+        - button "Update Entry" [ref=e29]
+    - button "Close" [ref=e30]:
+      - img
+      - generic [ref=e31]: Close
+```

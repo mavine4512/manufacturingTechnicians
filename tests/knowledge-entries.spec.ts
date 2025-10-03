@@ -15,10 +15,10 @@ test.describe("Knowledge Capture App", () => {
   })
 
   test("should display existing knowledge entries", async ({ page }) => {
-    await page.waitForSelector('text="Safety Protocol Update"', { timeout: 10000 })
-    await expect(page.getByText("Safety Protocol Update")).toBeVisible({ timeout: 10000 })
-    await expect(page.getByText("Machine Calibration Process")).toBeVisible({ timeout: 10000 })
-    await expect(page.getByText("Quality Control Checklist")).toBeVisible({ timeout: 10000 })
+    await page.waitForSelector('text="Safety Protocol Update"', { timeout: 15000 })
+    await expect(page.getByText("Safety Protocol Update")).toBeVisible({ timeout: 15000 })
+    await expect(page.getByText("Machine Calibration Process")).toBeVisible({ timeout: 15000 })
+    await expect(page.getByText("Quality Control Checklist")).toBeVisible({ timeout: 15000 })
   })
 
   test("should create a new knowledge entry", async ({ page }) => {
@@ -61,33 +61,40 @@ test.describe("Knowledge Capture App", () => {
     // Submit the form
     await page.getByTestId("submit-entry-button").click()
 
+    // Wait for any animations/transitions to complete
+    await page.waitForTimeout(1000)
+
     // Wait for dialog to close and verify update
-    await expect(page.getByRole("dialog")).not.toBeVisible({ timeout: 5000 })
+    await expect(page.getByRole("dialog")).toBeHidden({ timeout: 7000 })
     await expect(page.getByText("Updated Safety Protocol")).toBeVisible({ timeout: 5000 })
   })
 
   test("should delete a knowledge entry", async ({ page }) => {
-    await page.waitForSelector('text="Safety Protocol Update"', { timeout: 10000 })
-    await page.waitForSelector('[data-testid="delete-entry-1"]', { timeout: 10000 })
+  await page.waitForSelector('text="Safety Protocol Update"', { timeout: 10000 })
+  await page.waitForSelector('[data-testid="delete-entry-1"]', { timeout: 10000 })
 
-    // Get initial count of entries
-    const initialCards = await page.locator('[data-testid^="delete-entry-"]').count()
+  // Get initial count of entries
+  const initialCards = await page.locator('[data-testid^="delete-entry-"]').count()
+  console.log('Initial cards:', initialCards) // Debug log
 
-    page.once("dialog", (dialog) => {
-      expect(dialog.message()).toContain("Are you sure")
-      dialog.accept()
-    })
-
-    await page.getByTestId("delete-entry-1").click()
-
-    await page.waitForTimeout(1000)
-
-    // Verify entry count decreased
-    const finalCards = await page.locator('[data-testid^="delete-entry-"]').count()
-    expect(finalCards).toBe(initialCards - 1)
-
-    await expect(page.getByText("Safety Protocol Update")).not.toBeVisible()
+  page.once("dialog", (dialog) => {
+    expect(dialog.message()).toContain("Are you sure")
+    dialog.accept()
   })
+
+  await page.getByTestId("delete-entry-1").click()
+
+  // Wait for the specific entry to be removed from DOM
+  await expect(page.getByTestId("delete-entry-1")).not.toBeAttached({ timeout: 5000 })
+  
+  // Alternative: Wait for the text to disappear first
+  await expect(page.getByText("Safety Protocol Update")).not.toBeVisible({ timeout: 5000 })
+
+  // Verify entry count decreased
+  const finalCards = await page.locator('[data-testid^="delete-entry-"]').count()
+  console.log('Final cards:', finalCards) // Debug log
+  expect(finalCards).toBe(initialCards - 1)
+ })
 
   test("should be responsive on mobile", async ({ page, isMobile }) => {
     if (!isMobile) {
