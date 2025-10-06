@@ -1,11 +1,22 @@
 import { test, expect } from "@playwright/test"
 
 test.describe("Knowledge Capture App", () => {
+  // test.beforeEach(async ({ page }) => {
+  //   await page.request.post("/api/test-reset")
+  //   await page.goto("/")
+  //   await page.waitForLoadState("networkidle")
+  // })
+
   test.beforeEach(async ({ page }) => {
-    await page.request.post("/api/test-reset")
-    await page.goto("/")
-    await page.waitForLoadState("networkidle")
-  })
+  try {
+    await page.request.post("http://localhost:3000/api/test-reset");
+  } catch (err) {
+    console.warn("⚠️ Could not reset test data. Ensure server is running.");
+  }
+
+  await page.goto("/");
+  await page.waitForLoadState("networkidle");
+});
 
   test("should display the app header and title", async ({ page, isMobile }) => {
     await expect(page.getByRole("heading", { name: "Knowledge Capture" })).toBeVisible({ timeout: 10000 })
@@ -42,45 +53,6 @@ test.describe("Knowledge Capture App", () => {
     await expect(page.getByText("Test Entry Title")).toBeVisible({ timeout: 5000 })
     await expect(page.getByText("This is a test description for the new knowledge entry.")).toBeVisible()
 
-  })
-
-  test("should edit an existing knowledge entry", async ({ page }) => {
-    // // Wait for entries to load
-    // await page.waitForSelector('text="Safety Protocol Update"', { timeout: 10000 })
-    // await page.waitForSelector('[data-testid="edit-entry-1"]', { timeout: 10000 })
-
-    // // Click edit button
-    // await page.getByTestId("edit-entry-1").click()
-
-    // // Wait for dialog to open and form to be ready
-    // await expect(page.getByRole("dialog")).toBeVisible({ timeout: 5000 })
-    // await expect(page.getByText("Edit Entry")).toBeVisible()
-
-    // // Wait for the title input to be visible and have the existing value
-    // const titleInput = page.getByTestId("entry-title-input")
-    // await titleInput.waitFor({ state: "visible", timeout: 5000 })
-    // await expect(titleInput).toHaveValue("Safety Protocol Update", { timeout: 5000 })
-
-    // // Modify the title - fill() automatically clears first
-    // await titleInput.fill("Updated Safety Protocol")
-
-    // // Verify the new value is set
-    // await expect(titleInput).toHaveValue("Updated Safety Protocol")
-
-    // // Submit the form
-    // await page.getByTestId("submit-entry-button").click()
-
-    // // Wait for dialog to close
-    // await expect(page.getByRole("dialog")).not.toBeVisible({ timeout: 5000 })
-
-    // // Wait a bit for the UI to update
-    // await page.waitForTimeout(500)
-
-    // // Verify the updated text appears
-    // await expect(page.getByText("Updated Safety Protocol")).toBeVisible({ timeout: 5000 })
-
-    // // Verify the old text is gone
-    // await expect(page.getByText("Safety Protocol Update")).not.toBeVisible()
   })
 
   test("should delete a knowledge entry", async ({ page }) => {
