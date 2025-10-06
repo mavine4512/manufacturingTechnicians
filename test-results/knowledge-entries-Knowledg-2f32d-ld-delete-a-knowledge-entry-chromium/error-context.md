@@ -1,0 +1,141 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e7]:
+        - img [ref=e9]
+        - generic [ref=e11]:
+          - heading "Knowledge Hub" [level=2] [ref=e12]
+          - paragraph [ref=e13]: Manufacturing Portal
+      - generic [ref=e15]:
+        - generic [ref=e16]: Navigation
+        - list [ref=e18]:
+          - listitem [ref=e19]:
+            - link "Dashboard" [ref=e20] [cursor=pointer]:
+              - /url: /
+              - img [ref=e21] [cursor=pointer]
+              - generic [ref=e24] [cursor=pointer]: Dashboard
+          - listitem [ref=e25]:
+            - link "Knowledge Base" [ref=e26] [cursor=pointer]:
+              - /url: /
+              - img [ref=e27] [cursor=pointer]
+              - generic [ref=e29] [cursor=pointer]: Knowledge Base
+          - listitem [ref=e30]:
+            - link "Reports" [ref=e31] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e32] [cursor=pointer]
+              - generic [ref=e35] [cursor=pointer]: Reports
+          - listitem [ref=e36]:
+            - link "Documentation" [ref=e37] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e38] [cursor=pointer]
+              - generic [ref=e41] [cursor=pointer]: Documentation
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - link "Settings" [ref=e45] [cursor=pointer]:
+            - /url: "#settings"
+            - img [ref=e46] [cursor=pointer]
+            - generic [ref=e49] [cursor=pointer]: Settings
+    - main [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e54]:
+          - generic [ref=e56]:
+            - img [ref=e58]
+            - generic [ref=e60]:
+              - heading "Knowledge Capture" [level=1] [ref=e61]
+              - paragraph [ref=e62]: Manufacturing Technician Portal
+          - button "Add Entry" [ref=e63]:
+            - img
+            - generic [ref=e64]: Add Entry
+        - main [ref=e65]:
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - heading "Knowledge Entries" [level=2] [ref=e69]
+              - paragraph [ref=e70]: 4 entries available
+            - generic [ref=e71]:
+              - img [ref=e72]
+              - searchbox "Search entries..." [ref=e75]
+          - generic [ref=e76]:
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - img "Safety Protocol Update" [ref=e79]
+                - generic [ref=e81]:
+                  - img
+                  - text: Mar 1
+              - generic [ref=e82]:
+                - generic [ref=e83]: Safety Protocol Update
+                - generic [ref=e84]:
+                  - img [ref=e85]
+                  - text: March 1, 2025
+              - generic [ref=e87]:
+                - paragraph [ref=e88]: New safety procedures for handling hydraulic equipment. Always wear protective gear and follow lockout/tagout procedures.
+                - generic [ref=e89]:
+                  - button "Edit" [ref=e90]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e91]:
+                    - img
+                    - text: Delete
+            - generic [ref=e92]:
+              - generic [ref=e93]:
+                - img "Machine Calibration Process" [ref=e94]
+                - generic [ref=e96]:
+                  - img
+                  - text: Mar 2
+              - generic [ref=e97]:
+                - generic [ref=e98]: Machine Calibration Process
+                - generic [ref=e99]:
+                  - img [ref=e100]
+                  - text: March 2, 2025
+              - generic [ref=e102]:
+                - paragraph [ref=e103]: Step-by-step guide for calibrating CNC machines. Check alignment every 100 hours of operation.
+                - generic [ref=e104]:
+                  - button "Edit" [ref=e105]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e106]:
+                    - img
+                    - text: Delete
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - generic [ref=e109]: Quality Control Checklist
+                - generic [ref=e110]:
+                  - img [ref=e111]
+                  - text: March 3, 2025
+              - generic [ref=e113]:
+                - paragraph [ref=e114]: Daily quality control procedures for production line. Inspect dimensions, surface finish, and material integrity.
+                - generic [ref=e115]:
+                  - button "Edit" [ref=e116]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e117]:
+                    - img
+                    - text: Delete
+            - generic [ref=e118]:
+              - generic [ref=e119]:
+                - img "Test Entry Title" [ref=e120]
+                - generic [ref=e122]:
+                  - img
+                  - text: Oct 4
+              - generic [ref=e123]:
+                - generic [ref=e124]: Test Entry Title
+                - generic [ref=e125]:
+                  - img [ref=e126]
+                  - text: October 4, 2025
+              - generic [ref=e128]:
+                - paragraph [ref=e129]: This is a test description for the new knowledge entry.
+                - generic [ref=e130]:
+                  - button "Edit" [ref=e131]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e132]:
+                    - img
+                    - text: Delete
+    - region "Notifications (F8)":
+      - list
+  - button "Open Next.js Dev Tools" [ref=e138] [cursor=pointer]:
+    - img [ref=e139] [cursor=pointer]
+  - alert [ref=e142]
+```

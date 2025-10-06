@@ -1,0 +1,107 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - button "Toggle Sidebar" [ref=e9]:
+              - img
+              - generic [ref=e10]: Toggle Sidebar
+            - generic [ref=e11]:
+              - img [ref=e13]
+              - heading "Knowledge Capture" [level=1] [ref=e16]
+          - button [ref=e17]:
+            - img
+        - main [ref=e18]:
+          - generic [ref=e20]:
+            - generic [ref=e21]:
+              - heading "Knowledge Entries" [level=2] [ref=e22]
+              - paragraph [ref=e23]: 4 entries available
+            - generic [ref=e24]:
+              - img [ref=e25]
+              - searchbox "Search entries..." [ref=e28]
+          - generic [ref=e29]:
+            - generic [ref=e30]:
+              - generic [ref=e31]:
+                - img "Safety Protocol Update" [ref=e32]
+                - generic [ref=e34]:
+                  - img
+                  - text: Mar 1
+              - generic [ref=e35]:
+                - generic [ref=e36]: Safety Protocol Update
+                - generic [ref=e37]:
+                  - img [ref=e38]
+                  - text: March 1, 2025
+              - generic [ref=e40]:
+                - paragraph [ref=e41]: New safety procedures for handling hydraulic equipment. Always wear protective gear and follow lockout/tagout procedures.
+                - generic [ref=e42]:
+                  - button "Edit" [ref=e43]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e44]:
+                    - img
+                    - text: Delete
+            - generic [ref=e45]:
+              - generic [ref=e46]:
+                - img "Machine Calibration Process" [ref=e47]
+                - generic [ref=e49]:
+                  - img
+                  - text: Mar 2
+              - generic [ref=e50]:
+                - generic [ref=e51]: Machine Calibration Process
+                - generic [ref=e52]:
+                  - img [ref=e53]
+                  - text: March 2, 2025
+              - generic [ref=e55]:
+                - paragraph [ref=e56]: Step-by-step guide for calibrating CNC machines. Check alignment every 100 hours of operation.
+                - generic [ref=e57]:
+                  - button "Edit" [ref=e58]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e59]:
+                    - img
+                    - text: Delete
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - generic [ref=e62]: Quality Control Checklist
+                - generic [ref=e63]:
+                  - img [ref=e64]
+                  - text: March 3, 2025
+              - generic [ref=e66]:
+                - paragraph [ref=e67]: Daily quality control procedures for production line. Inspect dimensions, surface finish, and material integrity.
+                - generic [ref=e68]:
+                  - button "Edit" [ref=e69]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e70]:
+                    - img
+                    - text: Delete
+            - generic [ref=e71]:
+              - generic [ref=e72]:
+                - img "Test Entry Title" [ref=e73]
+                - generic [ref=e75]:
+                  - img
+                  - text: Oct 4
+              - generic [ref=e76]:
+                - generic [ref=e77]: Test Entry Title
+                - generic [ref=e78]:
+                  - img [ref=e79]
+                  - text: October 4, 2025
+              - generic [ref=e81]:
+                - paragraph [ref=e82]: This is a test description for the new knowledge entry.
+                - generic [ref=e83]:
+                  - button "Edit" [ref=e84]:
+                    - img
+                    - text: Edit
+                  - button "Delete" [ref=e85]:
+                    - img
+                    - text: Delete
+    - region "Notifications (F8)":
+      - list
+  - button "Open Next.js Dev Tools" [ref=e91] [cursor=pointer]:
+    - img [ref=e92] [cursor=pointer]
+  - alert [ref=e95]
+```

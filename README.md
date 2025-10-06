@@ -31,20 +31,20 @@ A mobile-first knowledge capture interface built for manufacturing technicians. 
 ### Installation
 
 1. Clone the repository:
-\`\`\`bash
-git clone <repository-url>
-cd knowledge-capture-app
-\`\`\`
+```bash
+git clone https://github.com/mavine4512/manufacturingTechnicians.git
+cd manufacturing-Technicians
+````
 
 2. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+```bash
+yarn
+````
 
 3. Run the development server:
-\`\`\`bash
-npm run dev
-\`\`\`
+```bash
+yarn dev
+```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
@@ -76,13 +76,13 @@ npm run dev
 
 Run Playwright tests:
 
-\`\`\`bash
+```bash
 # Run all tests
-npm run test:e2e
+yarn test:e2e
 
 # Run tests in UI mode (interactive)
-npm run test:e2e:ui
-\`\`\`
+yarn test:e2e:ui
+```
 
 ### Test Coverage
 
@@ -96,29 +96,30 @@ The test suite includes:
 
 ## Project Structure
 
-\`\`\`
+```plaintext
+
 ├── app/
 │   ├── api/
-│   │   └── entries/          # Mock API routes
-│   │       ├── route.ts      # GET all, POST new entry
+│   │   └── entries/             # Mock API routes
+│   │       ├── route.ts         # GET all, POST new entry
 │   │       └── [id]/
-│   │           └── route.ts  # GET, PATCH, DELETE single entry
-│   ├── globals.css           # Global styles and theme
-│   ├── layout.tsx            # Root layout
-│   └── page.tsx              # Main dashboard page
+│   │           └── route.ts     # GET, PATCH, DELETE single entry
+│   ├── globals.css              # Global styles and theme
+│   ├── layout.tsx               # Root layout
+│   └── page.tsx                 # Main dashboard page
 ├── components/
-│   ├── ui/                   # shadcn/ui components
-│   ├── entry-form-dialog.tsx # Form dialog for create/edit
+│   ├── ui/                      # shadcn/ui components
+│   ├── entry-form-dialog.tsx    # Form dialog for create/edit
 │   └── knowledge-entry-card.tsx # Entry display card
 ├── lib/
-│   ├── types.ts              # TypeScript type definitions
-│   ├── mock-data.ts          # Mock data store
-│   └── utils.ts              # Utility functions
+│   ├── types.ts                # TypeScript type definitions
+│   ├── mock-data.ts            # Mock data store
+│   └── utils.ts                # Utility functions
 ├── tests/
 │   └── knowledge-entries.spec.ts # Playwright E2E tests
 ├── playwright.config.ts      # Playwright configuration
 └── README.md
-\`\`\`
+```
 
 ## API Endpoints
 
@@ -131,13 +132,13 @@ Retrieves all knowledge entries.
 Creates a new knowledge entry.
 
 **Body**:
-\`\`\`json
+```plaintext
 {
   "title": "string",
   "description": "string",
   "imageUrl": "string (optional)"
 }
-\`\`\`
+```
 
 ### GET /api/entries/[id]
 Retrieves a single knowledge entry by ID.
@@ -213,6 +214,6 @@ MIT
 ## Support
 
 For issues or questions, please open an issue in the repository.
-\`\`\`
+
 
 This README provides comprehensive documentation for setup, usage, testing, and understanding the project architecture.
